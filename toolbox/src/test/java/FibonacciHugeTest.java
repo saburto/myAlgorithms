@@ -53,6 +53,30 @@ public class FibonacciHugeTest {
 	}
 
 	@Test
+	public void testGetFibHuge_2() throws Exception {
+		long fibHuge = FibonacciHuge.getFibHuge(10, 2);
+		assertThat(fibHuge).isEqualTo(1);
+	}
+
+	@Test
+	public void testGetFibHuge_3() throws Exception {
+		long fibHuge = FibonacciHuge.getFibHuge(10, 3);
+		assertThat(fibHuge).isEqualTo(1);
+	}
+
+	@Test
+	public void testGetFibHuge_100() throws Exception {
+		long fibHuge = FibonacciHuge.getFibHuge(100, 100000);
+		assertThat(fibHuge).isEqualTo(15075);
+	}
+
+	@Test
+	public void testGetFibHuge_4() throws Exception {
+		long fibHuge = FibonacciHuge.getFibHuge(10, 4);
+		assertThat(fibHuge).isEqualTo(3);
+	}
+
+	@Test
 	public void testGetFibHuge_30524() throws Exception {
 		long fibHuge = FibonacciHuge.getFibHuge(2816213588L, 30524);
 		assertThat(fibHuge).isEqualTo(10249);

@@ -13,7 +13,12 @@ public class FibonacciHuge {
 		if (m == 1) {
 			return new long[] { 0 };
 		}
-		return calc_fib(100000000, m);
+
+		if (m == 2) {
+			return new long[] { 0, 1, 1 };
+		}
+
+		return calc_fib(1000000, m);
 	}
 
 	static long[] calc_fib(final int n, long m) {
