@@ -8,19 +8,12 @@ public class LargestNumber {
 
             @Override
             public int compare(String o1, String o2) {
-                int compare = Character.compare(o2.charAt(0), o1.charAt(0));
-                return compare == 0 ? secondCompare(o1, o2, 1, 0, 0) : compare;
+                String a = o1 + o2;
+                String b = o2 + o1;
+                return b.compareTo(a);
             }
 
-            private int secondCompare(String o1, String o2, int index, int oldIndex1, int oldIndex2) {
-                if (index == Math.max(o1.length(), o2.length())) {
-                    return 0;
-                }
-                int index1 = o1.length() > index ? index : oldIndex1;
-                int index2 = o2.length() > index ? index : oldIndex2;
-                int compare = Character.compare(o2.charAt(index2), o1.charAt(index1));
-                return compare == 0 ? secondCompare(o1, o2, index + 1, index1, index2) : compare;
-            }
+
         });
         String result = "";
         for (int i = 0; i < a.length; i++) {
